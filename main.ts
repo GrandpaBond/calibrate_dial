@@ -27,7 +27,7 @@ basic.forever(function () {
     bitcommander.setLedColor(0xFF0000)
     bitcommander.ledShow()
     while (!(bitcommander.readButton(BCButtons.Yellow))) {
-        basic.showNumber(value)
+        basic.showString(msg)
         basic.pause(500)
         basic.clearScreen()
         basic.pause(100)
