@@ -18,13 +18,15 @@ function myDial (Reading: number) {
     }
 }
 let msg = ""
-let angle = 0
+let joy_y = 0
+let joy_x = 0
 pins.setAudioPin(AnalogPin.P1)
 let value = pins.analogReadPin(AnalogPin.P0)
 basic.forever(function () {
-    value = bitcommander.readDial()
-    angle = Math.round(myDial(value))
-    msg = "" + convertToText(value) + "=" + convertToText(angle)
+    let angle = 0
+    joy_x = bitcommander.readJoystick(BCJoystick.X)
+    joy_y = bitcommander.readJoystick(BCJoystick.Y)
+    msg = "" + convertToText(value) + "," + convertToText(angle)
     bitcommander.setLedColor(0xFF0000)
     bitcommander.ledShow()
     while (!(bitcommander.readButton(BCButtons.Yellow))) {

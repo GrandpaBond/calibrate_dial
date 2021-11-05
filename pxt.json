@@ -1,5 +1,5 @@
 {
-    "name": "calibrate_dial",
+    "name": "calibrate_controls",
     "description": "",
     "dependencies": {
         "core": "*",
