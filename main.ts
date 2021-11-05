@@ -18,11 +18,12 @@ function myDial (Reading: number) {
     }
 }
 let msg = ""
+let angle = 0
 pins.setAudioPin(AnalogPin.P1)
 let value = pins.analogReadPin(AnalogPin.P0)
-let angle = myDial(value)
 basic.forever(function () {
     value = bitcommander.readDial()
+    angle = Math.round(myDial(value))
     msg = "" + convertToText(value) + "=" + convertToText(angle)
     bitcommander.setLedColor(0xFF0000)
     bitcommander.ledShow()
